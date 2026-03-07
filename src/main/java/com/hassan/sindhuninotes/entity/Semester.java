@@ -18,9 +18,9 @@ public class Semester {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    private Integer number;
+    private Short number;
     private String title;
     private String subtitle;
-    private Integer year;
+    private Short year;
     private String season;
 }

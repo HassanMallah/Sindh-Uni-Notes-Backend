@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,7 +26,7 @@ public class Material {
     private String type;
     private String description;
     private String fileId;
-    private Double fileSizeMb;
+    private BigDecimal fileSizeMb;
 
     @CreationTimestamp
     private LocalDateTime uploadedAt;
