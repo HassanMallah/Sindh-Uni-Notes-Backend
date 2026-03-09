@@ -1,6 +1,8 @@
 package com.hassan.sindhuninotes.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +22,20 @@ public class Department {
 
     private String name;
     private String description;
+
+    @JsonProperty("tags")
     private String tag;
 
+    @Column(name = "subject_count")
+    @JsonProperty("subject_count")
+    private Integer subjectCount;
+
+    @Column(name = "file_count")
+    @JsonProperty("file_count")
+    private Integer fileCount;
+
     @CreationTimestamp
+    @JsonIgnore
     private LocalDateTime createdAt;
 
 }

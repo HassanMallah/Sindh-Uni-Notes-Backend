@@ -26,10 +26,4 @@ public class DepartmentController {
         return ResponseEntity.ok(departmentService.getAllDepartments());
     }
 
-
-    @GetMapping("/{id}/semesters")
-    public ResponseEntity<List<Semester>> getSemestersByDepartment(@PathVariable Integer id) {
-        return ResponseEntity.ok(departmentService.getSemestersByDepartment(id));
-    }
-
 }

@@ -1,16 +1,10 @@
 package com.hassan.sindhuninotes.controller;
 
-
-import com.hassan.sindhuninotes.entity.Subject;
-import com.hassan.sindhuninotes.service.DepartmentService;
+import com.hassan.sindhuninotes.dto.SemestersResponseDTO;
 import com.hassan.sindhuninotes.service.SemesterService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/semesters")
@@ -23,8 +17,8 @@ public class SemesterController {
     }
 
 
-    @GetMapping("/{id}/subjects")
-    public ResponseEntity<List<Subject>> getSubjectsBySemester(@PathVariable Integer id) {
-        return ResponseEntity.ok(semesterService.getSubjectsBySemester(id));
+    @GetMapping
+    public ResponseEntity<SemestersResponseDTO> getSemesters(@RequestParam Integer dept) {
+        return ResponseEntity.ok(semesterService.getSemestersForDept(dept));
     }
 }

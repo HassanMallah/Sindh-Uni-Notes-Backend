@@ -22,8 +22,4 @@ public class DepartmentService {
     public List<Department> getAllDepartments() {
         return departmentRepository.findAll();
     }
-
-    public List<Semester> getSemestersByDepartment(Integer departmentId) {
-        return semesterRepository.findByDepartmentId(departmentId);
-    }
 }

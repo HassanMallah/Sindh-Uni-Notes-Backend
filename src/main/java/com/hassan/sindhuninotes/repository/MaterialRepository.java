@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface MaterialRepository extends JpaRepository<Material, Integer> {
     List<Material> findBySubjectId(Integer subjectId);
+    Integer countBySubjectIdAndType(Integer subjectId, String type);
+    List<Material> findTop6ByOrderByUploadedAtDesc();
 }
